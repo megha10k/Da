@@ -1,0 +1,91 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\SKY_NET\Desktop\MAIN\GROUP_B\WORD_COUNT> hdfs dfs -mkdir input1519
+PS C:\Users\SKY_NET\Desktop\MAIN\GROUP_B\WORD_COUNT> hdfs dfs -copyFromLocal TEXT.txt  input1519
+PS C:\Users\SKY_NET\Desktop\MAIN\GROUP_B\WORD_COUNT> hadoop jar WordCount.jar com.mapreduce.wc.WordCount input1519 output1519
+2023-05-11 07:34:35,993 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at localhost/127.0.0.1:8032
+2023-05-11 07:34:36,700 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+2023-05-11 07:34:36,718 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/SKY_NET/.staging/job_1683770514589_0001
+2023-05-11 07:34:37,028 INFO input.FileInputFormat: Total input files to process : 1
+2023-05-11 07:34:37,099 INFO mapreduce.JobSubmitter: number of splits:1
+2023-05-11 07:34:37,221 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1683770514589_0001
+2023-05-11 07:34:37,221 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2023-05-11 07:34:37,423 INFO conf.Configuration: resource-types.xml not found
+2023-05-11 07:34:37,423 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2023-05-11 07:34:37,825 INFO impl.YarnClientImpl: Submitted application application_1683770514589_0001
+2023-05-11 07:34:37,876 INFO mapreduce.Job: The url to track the job: http://SKY-NET:8088/proxy/application_1683770514589_0001/
+2023-05-11 07:34:37,877 INFO mapreduce.Job: Running job: job_1683770514589_0001
+2023-05-11 07:34:46,041 INFO mapreduce.Job: Job job_1683770514589_0001 running in uber mode : false
+2023-05-11 07:34:46,042 INFO mapreduce.Job:  map 0% reduce 0%
+2023-05-11 07:34:51,119 INFO mapreduce.Job:  map 100% reduce 0%
+2023-05-11 07:34:56,179 INFO mapreduce.Job:  map 100% reduce 100%
+2023-05-11 07:34:56,186 INFO mapreduce.Job: Job job_1683770514589_0001 completed successfully
+2023-05-11 07:34:56,275 INFO mapreduce.Job: Counters: 50
+        File System Counters
+                FILE: Number of bytes read=84
+                FILE: Number of bytes written=548425
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=208
+                HDFS: Number of bytes written=50
+                HDFS: Number of read operations=8
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Launched map tasks=1
+                Launched reduce tasks=1
+                Data-local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=2632
+                Total time spent by all reduces in occupied slots (ms)=2858
+                Total time spent by all map tasks (ms)=2632
+                Total time spent by all reduce tasks (ms)=2858
+                Total vcore-milliseconds taken by all map tasks=2632
+                Total vcore-milliseconds taken by all reduce tasks=2858
+                Total megabyte-milliseconds taken by all map tasks=2695168
+                Total megabyte-milliseconds taken by all reduce tasks=2926592
+        Map-Reduce Framework
+                Map input records=15
+                Map output records=15
+                Map output bytes=137
+                Map output materialized bytes=84
+                Input split bytes=118
+                Combine input records=15
+                Combine output records=7
+                Reduce input groups=7
+                Reduce shuffle bytes=84
+                Reduce input records=7
+                Reduce output records=7
+                Spilled Records=14
+                Shuffled Maps =1
+                Failed Shuffles=0
+                Merged Map outputs=1
+                GC time elapsed (ms)=71
+                CPU time spent (ms)=0
+                Physical memory (bytes) snapshot=0
+                Virtual memory (bytes) snapshot=0
+                Total committed heap usage (bytes)=394788864
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        File Input Format Counters
+                Bytes Read=90
+        File Output Format Counters
+                Bytes Written=50
+PS C:\Users\SKY_NET\Desktop\MAIN\GROUP_B\WORD_COUNT> hadoop fs -cat output1519/*
+AKTAR   1
+IS      1
+MY      3
+NAME    2
+SAHIL   6
+SHAIKH  1
+sahil   1
+PS C:\Users\SKY_NET\Desktop\MAIN\GROUP_B\WORD_COUNT> G:\appmanifest_1938090.acf
